@@ -10,6 +10,24 @@ export default function Home() {
   const canteens = useQuery(api.canteens.list);
   const navigate = useNavigate();
 
+  // Add loading state
+  if (canteens === undefined) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <p className="text-gray-600">Loading canteens...</p>
+      </div>
+    );
+  }
+
+  // Add error state
+  if (canteens === null || !Array.isArray(canteens)) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <p className="text-gray-600">Unable to load canteens. Please refresh the page.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -79,7 +97,7 @@ export default function Home() {
           Choose Your Canteen
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {canteens?.map((canteen, index) => (
+          {canteens.map((canteen, index) => (
             <motion.div
               key={canteen.id}
               initial={{ opacity: 0, y: 20 }}
