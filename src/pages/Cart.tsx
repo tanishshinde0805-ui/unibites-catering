@@ -76,6 +76,8 @@ export default function Cart() {
         totalAmount,
       });
 
+      // Save customer name for order history
+      localStorage.setItem("lastCustomerName", customerName.trim());
       localStorage.removeItem("cart");
       localStorage.removeItem("selectedCanteen");
       toast.success("Order placed successfully!");

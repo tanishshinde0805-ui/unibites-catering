@@ -17,6 +17,7 @@ import Cart from "./pages/Cart.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
 import OrderTracking from "./pages/OrderTracking.tsx";
+import OrderHistory from "./pages/OrderHistory.tsx";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
 
@@ -55,6 +56,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/menu/:canteenId" element={<Menu />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/track/:orderId" element={<OrderTracking />} />
+            <Route path="/orders" element={<OrderHistory />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />

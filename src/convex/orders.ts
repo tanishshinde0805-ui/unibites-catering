@@ -84,3 +84,13 @@ export const getById = query({
     return await ctx.db.get(args.id);
   },
 });
+
+export const listByCustomer = query({
+  args: { customerName: v.string() },
+  handler: async (ctx, args) => {
+    const allOrders = await ctx.db.query("orders").collect();
+    return allOrders
+      .filter((order) => order.customerName === args.customerName)
+      .sort((a, b) => b._creationTime - a._creationTime);
+  },
+});

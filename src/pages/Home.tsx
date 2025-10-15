@@ -24,14 +24,22 @@ export default function Home() {
             <div className="text-3xl">🍽️</div>
             <h1 className="text-2xl font-bold tracking-tight text-gray-900">UniBites</h1>
           </motion.div>
-          <Button
-            variant="outline"
-            onClick={() => navigate("/cart")}
-            className="gap-2"
-          >
-            <ShoppingCart className="h-4 w-4" />
-            Cart
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="outline"
+              onClick={() => navigate("/orders")}
+            >
+              My Orders
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate("/cart")}
+              className="gap-2"
+            >
+              <ShoppingCart className="h-4 w-4" />
+              Cart
+            </Button>
+          </div>
         </div>
       </nav>
 
