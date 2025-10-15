@@ -64,7 +64,7 @@ export default function Cart() {
 
     setIsSubmitting(true);
     try {
-      await createOrder({
+      const orderId = await createOrder({
         canteenId: selectedCanteenId,
         customerName: customerName.trim(),
         items: cart.map((item) => ({
@@ -79,7 +79,7 @@ export default function Cart() {
       localStorage.removeItem("cart");
       localStorage.removeItem("selectedCanteen");
       toast.success("Order placed successfully!");
-      navigate("/");
+      navigate(`/track/${orderId}`);
     } catch (error) {
       toast.error("Failed to place order. Please try again.");
     } finally {
