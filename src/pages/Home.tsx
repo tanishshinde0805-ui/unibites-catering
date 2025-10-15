@@ -21,7 +21,6 @@ export default function Home() {
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => navigate("/")}
           >
-            <div className="text-3xl">🍽️</div>
             <h1 className="text-2xl font-bold tracking-tight text-gray-900">UniBites</h1>
           </motion.div>
           <div className="flex items-center gap-3">
@@ -100,7 +99,6 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-8">
-                  <div className="text-6xl mb-6">{canteen.icon}</div>
                   <h4 className="text-2xl font-bold tracking-tight text-gray-900 mb-3">
                     {canteen.name}
                   </h4>

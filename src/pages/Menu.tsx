@@ -68,12 +68,9 @@ export default function Menu() {
             >
               <ArrowLeft className="h-5 w-5" />
             </Button>
-            <div className="flex items-center gap-3">
-              <div className="text-3xl">{canteen.icon}</div>
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-                {canteen.name}
-              </h1>
-            </div>
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+              {canteen.name}
+            </h1>
           </div>
           <Button
             variant="outline"
