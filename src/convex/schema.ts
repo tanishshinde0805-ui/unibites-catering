@@ -32,12 +32,48 @@ const schema = defineSchema(
       role: v.optional(roleValidator), // role of the user. do not remove
     }).index("email", ["email"]), // index for the email. do not remove or modify
 
-    // add other tables here
+    // Canteen admins
+    canteenAdmins: defineTable({
+      canteenId: v.string(),
+      username: v.string(),
+      password: v.string(), // In production, this should be hashed
+      canteenName: v.string(),
+    })
+      .index("by_username", ["username"])
+      .index("by_canteen", ["canteenId"]),
 
-    // tableName: defineTable({
-    //   ...
-    //   // table fields
-    // }).index("by_field", ["field"])
+    // Menu items
+    menuItems: defineTable({
+      canteenId: v.string(),
+      name: v.string(),
+      price: v.number(),
+      category: v.string(), // "Snacks", "Meals", "Beverages"
+      image: v.string(),
+      description: v.optional(v.string()),
+      available: v.boolean(),
+    })
+      .index("by_canteen", ["canteenId"])
+      .index("by_canteen_and_category", ["canteenId", "category"]),
+
+    // Orders
+    orders: defineTable({
+      canteenId: v.string(),
+      customerName: v.string(),
+      items: v.array(
+        v.object({
+          menuItemId: v.id("menuItems"),
+          name: v.string(),
+          price: v.number(),
+          quantity: v.number(),
+        })
+      ),
+      totalAmount: v.number(),
+      status: v.string(), // "pending", "preparing", "ready", "delivered"
+      orderNumber: v.string(),
+    })
+      .index("by_canteen", ["canteenId"])
+      .index("by_status", ["status"])
+      .index("by_canteen_and_status", ["canteenId", "status"]),
   },
   {
     schemaValidation: false,
