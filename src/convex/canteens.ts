@@ -8,6 +8,7 @@ export const CANTEENS = [
     description: "Your favorite street food and quick bites",
     color: "bg-orange-500",
     icon: "🍔",
+    image: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800",
   },
   {
     id: "campus-cafeteria",
@@ -15,6 +16,7 @@ export const CANTEENS = [
     description: "Healthy meals and fresh beverages",
     color: "bg-green-500",
     icon: "☕",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
   },
   {
     id: "canteen-3",
@@ -22,6 +24,7 @@ export const CANTEENS = [
     description: "Traditional Indian cuisine",
     color: "bg-red-500",
     icon: "🍛",
+    image: "https://images.unsplash.com/photo-1590080875831-79c4f3a7e8f5?w=800",
   },
   {
     id: "canteen-4",
@@ -29,6 +32,7 @@ export const CANTEENS = [
     description: "Pizza, pasta, and continental",
     color: "bg-yellow-500",
     icon: "🍕",
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
   },
   {
     id: "canteen-5",
@@ -36,6 +40,7 @@ export const CANTEENS = [
     description: "Desserts and sweet treats",
     color: "bg-blue-500",
     icon: "🍩",
+    image: "https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=800",
   },
 ];
 

@@ -89,18 +89,27 @@ export default function Home() {
               transition={{ delay: index * 0.1 }}
             >
               <Card
-                className="p-8 hover:shadow-lg transition-shadow cursor-pointer border-2 border-gray-200 hover:border-gray-900"
+                className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border-2 border-gray-200 hover:border-gray-900"
                 onClick={() => navigate(`/menu/${canteen.id}`)}
               >
-                <div className="text-6xl mb-6">{canteen.icon}</div>
-                <h4 className="text-2xl font-bold tracking-tight text-gray-900 mb-3">
-                  {canteen.name}
-                </h4>
-                <p className="text-gray-600 mb-6">{canteen.description}</p>
-                <Button variant="outline" className="w-full gap-2">
-                  View Menu
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
+                <div className="aspect-video w-full overflow-hidden bg-gray-100">
+                  <img
+                    src={canteen.image}
+                    alt={canteen.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="text-6xl mb-6">{canteen.icon}</div>
+                  <h4 className="text-2xl font-bold tracking-tight text-gray-900 mb-3">
+                    {canteen.name}
+                  </h4>
+                  <p className="text-gray-600 mb-6">{canteen.description}</p>
+                  <Button variant="outline" className="w-full gap-2">
+                    View Menu
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
               </Card>
             </motion.div>
           ))}
