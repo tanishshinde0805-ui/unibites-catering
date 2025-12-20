@@ -14,6 +14,7 @@ import type * as auth from "../auth.js";
 import type * as canteens from "../canteens.js";
 import type * as http from "../http.js";
 import type * as menuItems from "../menuItems.js";
+import type * as migrations from "../migrations.js";
 import type * as orders from "../orders.js";
 import type * as seedData from "../seedData.js";
 import type * as users from "../users.js";
@@ -39,6 +40,7 @@ declare const fullApi: ApiFromModules<{
   canteens: typeof canteens;
   http: typeof http;
   menuItems: typeof menuItems;
+  migrations: typeof migrations;
   orders: typeof orders;
   seedData: typeof seedData;
   users: typeof users;
