@@ -13,7 +13,7 @@ export const seedDatabase = mutation({
     const admins = [
       { canteenId: "food-plaza", username: "foodadmin", password: "12345", canteenName: "Food Plaza" },
       { canteenId: "campus-cafeteria", username: "cafeadmin", password: "12345", canteenName: "Campus Cafeteria" },
-      { canteenId: "canteen-4", username: "admin4", password: "12345", canteenName: "Canteen 4" },
+      { canteenId: "canteen-4", username: "admin4", password: "12345", canteenName: "Canteen 3" },
     ];
 
     for (const admin of admins) {

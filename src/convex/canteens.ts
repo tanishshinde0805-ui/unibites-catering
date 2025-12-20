@@ -20,7 +20,7 @@ export const CANTEENS = [
   },
   {
     id: "canteen-4",
-    name: "Canteen 4",
+    name: "Canteen 3",
     description: "Pizza, pasta, and continental",
     color: "bg-yellow-500",
     icon: "🍕",

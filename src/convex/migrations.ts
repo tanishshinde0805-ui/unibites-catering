@@ -40,3 +40,20 @@ export const removeCanteens3And5 = mutation({
     return "Cleanup complete";
   },
 });
+
+export const renameCanteen4To3 = mutation({
+  args: {},
+  handler: async (ctx) => {
+    // Update admin name
+    const admins = await ctx.db
+      .query("canteenAdmins")
+      .withIndex("by_canteen", (q) => q.eq("canteenId", "canteen-4"))
+      .collect();
+    
+    for (const admin of admins) {
+      await ctx.db.patch(admin._id, { canteenName: "Canteen 3" });
+    }
+
+    return "Renamed Canteen 4 to Canteen 3";
+  },
+});
